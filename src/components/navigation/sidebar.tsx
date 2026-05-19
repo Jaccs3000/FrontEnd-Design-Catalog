@@ -39,7 +39,7 @@ export function Sidebar() {
   } = useCatalogStore()
 
   return (
-    <aside className="hidden md:flex h-screen w-64 border-r bg-background/95 backdrop-blur p-4 flex-col sticky top-0">
+    <aside className="hidden lg:flex h-screen w-72 border-r bg-background/95 backdrop-blur p-4 flex-col sticky top-0">
       <div className="mb-10">
         <h1 className="text-2xl font-bold tracking-tight">
           Frontend Catalog

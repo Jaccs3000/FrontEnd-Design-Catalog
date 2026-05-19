@@ -11,10 +11,10 @@ export function AppLayout({
       <div className="flex">
         <Sidebar />
 
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
           <Header />
 
-          <div className="p-6">
+          <div className="px-6 py-8 md:px-8 md:py-10 xl:px-12">
             {children}
           </div>
         </main>

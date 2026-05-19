@@ -16,24 +16,24 @@ export function ShowcaseCard({
   children: React.ReactNode
 }) {
   return (
-    <Card className="rounded-3xl border bg-background/60 backdrop-blur shadow-sm hover:shadow-lg transition-all duration-300">
-      <CardHeader className="space-y-3">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-xl">
+    <Card className="rounded-3xl border bg-background/60 backdrop-blur shadow-sm hover:shadow-lg transition-all duration-300 min-h-[320px]">
+      <CardHeader className="space-y-4 pb-6">
+        <div className="flex items-center justify-between gap-4">
+          <CardTitle className="text-2xl tracking-tight">
             {title}
           </CardTitle>
 
-          <span className="text-xs rounded-full border px-2 py-1 text-muted-foreground">
+          <span className="text-xs rounded-full border px-3 py-1 text-muted-foreground whitespace-nowrap">
             shadcn/ui
           </span>
         </div>
 
-        <CardDescription className="text-sm leading-relaxed">
+        <CardDescription className="text-sm leading-7 max-w-xl">
           {description}
         </CardDescription>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="space-y-8">
         {children}
       </CardContent>
     </Card>
