@@ -1,43 +1,37 @@
-import { AppLayout } from "@/components/layout/app-layout"
-import { ShowcaseGrid } from "@/components/showcase/showcase-grid"
-import { ShowcaseCard } from "@/components/showcase/showcase-card"
+"use client"
 
-import { Button } from "@/components/ui/button"
+import { AppLayout } from "@/components/layout/app-layout"
+
+import { ShowcaseGrid } from "@/components/showcase/showcase-grid"
+
+import { ButtonsShowcase } from "@/components/sections/buttons-showcase"
+import { CardsShowcase } from "@/components/sections/cards-showcase"
+import { InputsShowcase } from "@/components/sections/inputs-showcase"
+import { DialogsShowcase } from "@/components/sections/dialogs-showcase"
 
 export default function Home() {
   return (
     <AppLayout>
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold tracking-tight">
+      <div className="mb-10">
+        <h1 className="text-5xl font-bold tracking-tight">
           Frontend Design Catalog
         </h1>
 
-        <p className="text-muted-foreground mt-2">
-          Modern UI components and patterns.
+        <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
+          Explore modern UI components, patterns,
+          animations and frontend systems used in
+          modern web applications.
         </p>
       </div>
 
       <ShowcaseGrid>
-        <ShowcaseCard
-          title="Buttons"
-          description="Interactive button variants."
-        >
-          <div className="flex flex-wrap gap-4">
-            <Button>Primary</Button>
+        <ButtonsShowcase />
 
-            <Button variant="secondary">
-              Secondary
-            </Button>
+        <CardsShowcase />
 
-            <Button variant="outline">
-              Outline
-            </Button>
+        <InputsShowcase />
 
-            <Button variant="ghost">
-              Ghost
-            </Button>
-          </div>
-        </ShowcaseCard>
+        <DialogsShowcase />
       </ShowcaseGrid>
     </AppLayout>
   )

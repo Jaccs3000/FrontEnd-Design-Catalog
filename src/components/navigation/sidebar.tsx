@@ -26,11 +26,15 @@ const items = [
 
 export function Sidebar() {
   return (
-    <aside className="hidden md:flex h-screen w-64 border-r bg-background p-4 flex-col">
-      <div className="mb-8">
-        <h1 className="text-xl font-bold">
+    <aside className="hidden md:flex h-screen w-64 border-r bg-background/95 backdrop-blur p-4 flex-col sticky top-0">
+      <div className="mb-10">
+        <h1 className="text-2xl font-bold tracking-tight">
           Frontend Catalog
         </h1>
+
+        <p className="text-sm text-muted-foreground mt-2">
+          Modern UI System
+        </p>
       </div>
 
       <nav className="space-y-2">
@@ -40,7 +44,7 @@ export function Sidebar() {
           return (
             <button
               key={item.title}
-              className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-muted transition"
+              className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium hover:bg-muted transition-all"
             >
               <Icon className="h-4 w-4" />
               {item.title}

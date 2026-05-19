@@ -1,9 +1,9 @@
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card"
 
 export function ShowcaseCard({
@@ -16,11 +16,19 @@ export function ShowcaseCard({
   children: React.ReactNode
 }) {
   return (
-    <Card className="rounded-2xl">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
+    <Card className="rounded-3xl border bg-background/60 backdrop-blur shadow-sm hover:shadow-lg transition-all duration-300">
+      <CardHeader className="space-y-3">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-xl">
+            {title}
+          </CardTitle>
 
-        <CardDescription>
+          <span className="text-xs rounded-full border px-2 py-1 text-muted-foreground">
+            shadcn/ui
+          </span>
+        </div>
+
+        <CardDescription className="text-sm leading-relaxed">
           {description}
         </CardDescription>
       </CardHeader>
