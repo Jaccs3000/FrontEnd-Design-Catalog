@@ -4,12 +4,25 @@ import { AppLayout } from "@/components/layout/app-layout"
 
 import { ShowcaseGrid } from "@/components/showcase/showcase-grid"
 
+import { CategoryNav } from "@/components/navigation/category-nav"
+
 import { ButtonsShowcase } from "@/components/sections/buttons-showcase"
 import { CardsShowcase } from "@/components/sections/cards-showcase"
 import { InputsShowcase } from "@/components/sections/inputs-showcase"
 import { DialogsShowcase } from "@/components/sections/dialogs-showcase"
+import { TabsShowcase } from "@/components/sections/tabs-showcase"
+import { AccordionShowcase } from "@/components/sections/accordion-showcase"
+import { TooltipShowcase } from "@/components/sections/tooltip-showcase"
+import { BadgesShowcase } from "@/components/sections/badges-showcase"
+import { SkeletonShowcase } from "@/components/sections/skeleton-showcase"
+import { EmptyShowcase } from "@/components/sections/empty-showcase"
+
+import { useCatalogStore } from "@/store/use-catalog-store"
 
 export default function Home() {
+  const { activeCategory } =
+    useCatalogStore()
+
   return (
     <AppLayout>
       <div className="mb-10">
@@ -24,14 +37,54 @@ export default function Home() {
         </p>
       </div>
 
+      <CategoryNav />
+
       <ShowcaseGrid>
-        <ButtonsShowcase />
+        {(activeCategory === "All" ||
+          activeCategory === "Buttons") && (
+          <ButtonsShowcase />
+        )}
 
-        <CardsShowcase />
+        {(activeCategory === "All" ||
+          activeCategory === "Cards") && (
+          <CardsShowcase />
+        )}
 
-        <InputsShowcase />
+        {(activeCategory === "All" ||
+          activeCategory === "Inputs") && (
+          <InputsShowcase />
+        )}
 
-        <DialogsShowcase />
+        {(activeCategory === "All" ||
+          activeCategory === "Dialogs") && (
+          <DialogsShowcase />
+        )}
+
+        {(activeCategory === "All" ||
+          activeCategory === "Navigation") && (
+          <TabsShowcase />
+        )}
+
+        {(activeCategory === "All" ||
+          activeCategory === "Data Display") && (
+          <AccordionShowcase />
+        )}
+
+        {(activeCategory === "All" ||
+          activeCategory === "Feedback") && (
+          <>
+            <TooltipShowcase />
+
+            <BadgesShowcase />
+
+            <EmptyShowcase />
+          </>
+        )}
+
+        {(activeCategory === "All" ||
+          activeCategory === "Loading") && (
+          <SkeletonShowcase />
+        )}
       </ShowcaseGrid>
     </AppLayout>
   )
