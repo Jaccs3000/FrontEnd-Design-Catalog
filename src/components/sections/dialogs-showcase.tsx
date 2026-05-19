@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 import {
   Dialog,
@@ -9,12 +9,31 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 
-import { ShowcaseCard } from "@/components/showcase/showcase-card";
-import { ComponentMeta } from "@/components/showcase/component-meta";
+import { ShowcaseCard } from "@/components/showcase/showcase-card"
+
+import { ComponentMeta } from "@/components/showcase/component-meta"
+
+import { CodeBlock } from "@/components/showcase/code-block"
+
+const dialogCode = `
+<Dialog>
+  <DialogTrigger>
+    Open Dialog
+  </DialogTrigger>
+
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>
+        Create Project
+      </DialogTitle>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+`
 
 export function DialogsShowcase() {
   return (
@@ -27,7 +46,10 @@ export function DialogsShowcase() {
         title="Dialogs"
         description="Dialogs display focused content and actions above the main interface."
       >
-        <ComponentMeta library="shadcn/ui" category="Overlay" />
+        <ComponentMeta
+          library="shadcn/ui"
+          category="Overlay"
+        />
 
         <div className="space-y-6">
           <Dialog>
@@ -37,10 +59,13 @@ export function DialogsShowcase() {
 
             <DialogContent className="rounded-3xl">
               <DialogHeader>
-                <DialogTitle>Create Project</DialogTitle>
+                <DialogTitle>
+                  Create Project
+                </DialogTitle>
 
                 <DialogDescription>
-                  Create a new workspace for your team and projects.
+                  Create a new workspace for your
+                  team and projects.
                 </DialogDescription>
               </DialogHeader>
 
@@ -50,12 +75,16 @@ export function DialogsShowcase() {
                   className="w-full rounded-xl border bg-background px-4 py-3 outline-none"
                 />
 
-                <Button className="w-full">Continue</Button>
+                <Button className="w-full">
+                  Continue
+                </Button>
               </div>
             </DialogContent>
           </Dialog>
+
+          <CodeBlock code={dialogCode} />
         </div>
       </ShowcaseCard>
     </motion.div>
-  );
+  )
 }

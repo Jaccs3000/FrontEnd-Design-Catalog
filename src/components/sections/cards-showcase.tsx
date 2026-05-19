@@ -11,7 +11,26 @@ import {
 import { Button } from "@/components/ui/button"
 
 import { ShowcaseCard } from "@/components/showcase/showcase-card"
+
 import { ComponentMeta } from "@/components/showcase/component-meta"
+
+import { CodeBlock } from "@/components/showcase/code-block"
+
+const cardsCode = `
+<div className="rounded-2xl border bg-background p-5 shadow-sm">
+  <div className="flex items-start justify-between">
+    <div>
+      <p className="text-sm text-muted-foreground">
+        Revenue
+      </p>
+
+      <h3 className="mt-2 text-3xl font-bold">
+        $48,320
+      </h3>
+    </div>
+  </div>
+</div>
+`
 
 export function CardsShowcase() {
   return (
@@ -52,7 +71,10 @@ export function CardsShowcase() {
                 +12.5%
               </span>
 
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+              >
                 View
               </Button>
             </div>
@@ -82,6 +104,8 @@ export function CardsShowcase() {
               <ArrowUpRight />
             </Button>
           </div>
+
+          <CodeBlock code={cardsCode} />
         </div>
       </ShowcaseCard>
     </motion.div>

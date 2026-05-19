@@ -2,12 +2,27 @@
 
 import { motion } from "framer-motion"
 
-import { Mail, Search } from "lucide-react"
+import {
+  Mail,
+  Search,
+} from "lucide-react"
 
 import { Input } from "@/components/ui/input"
 
 import { ShowcaseCard } from "@/components/showcase/showcase-card"
+
 import { ComponentMeta } from "@/components/showcase/component-meta"
+
+import { CodeBlock } from "@/components/showcase/code-block"
+
+const inputCode = `
+<Input placeholder="Enter your email" />
+
+<Input
+  disabled
+  placeholder="Disabled input"
+/>
+`
 
 export function InputsShowcase() {
   return (
@@ -66,6 +81,8 @@ export function InputsShowcase() {
               placeholder="Disabled input"
             />
           </div>
+
+          <CodeBlock code={inputCode} />
         </div>
       </ShowcaseCard>
     </motion.div>
